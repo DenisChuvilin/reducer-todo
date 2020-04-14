@@ -1,5 +1,17 @@
-import React from "react";
+import React from 'react';
 
-import { initialState, reducer } from "../reducers/reducer";
+import Task from './Task';
 
-const [state, dispatch] = useReducer(reducer, initialState) 
+const List = ({ state, dispatch }) => {
+  return (
+    <div>
+      {state.map((task) => (
+        <Task key={task.id} task={task} dispatch = {dispatch}/>
+      ))}
+
+      <button>Clear Completed</button>
+    </div>
+  );
+};
+
+export default List;

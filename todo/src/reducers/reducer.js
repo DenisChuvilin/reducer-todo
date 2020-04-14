@@ -1,11 +1,28 @@
-import React from "react";
+import React from 'react';
 
-export const initialState = {
+export const initialState = [
+  {
     item: 'Change brake fluid',
-    completed:false, 
-    id: Date.now()
-}
-
+    completed: false,
+    id: Math.random(),
+  },
+  {
+    item: 'Check daily planner',
+    completed: false,
+    id:  Math.random(),
+  },
+];
 export const reducer = (state, action) => {
- return null 
-}
+  switch (action.type) {
+    case 'ADD_ITEM':
+      return [action.payload,...state ];
+    case 'TASK_COMPLETED':
+      return (
+          state.map(task => action.payload === task.id ? {...task, completed: !task.completed}: task)
+      )
+    case 'DELETE COMPLETED':
+      return console.log('write code for Delete Completed');
+    default:
+      return state;
+  }
+};
