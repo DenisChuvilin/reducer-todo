@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.item_completed {
+  color: rgb(0,0,0,.2)
+}
+
+.success{
+  display: block;
+  color:mediumseagreen;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.not-done{
+  display: none;
+}

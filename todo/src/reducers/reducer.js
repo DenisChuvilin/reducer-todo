@@ -21,7 +21,7 @@ export const reducer = (state, action) => {
           state.map(task => action.payload === task.id ? {...task, completed: !task.completed}: task)
       )
     case 'DELETE COMPLETED':
-      return console.log('write code for Delete Completed');
+      return action.payload.filter(task => !task.completed)
     default:
       return state;
   }
